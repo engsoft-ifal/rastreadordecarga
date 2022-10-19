@@ -1,20 +1,14 @@
-# Eclipse Cargo Tracker - Applied Domain-Driven Design Blueprints for Jakarta EE
+# Rastreador de Carga
 
-The project demonstrates how you can develop applications with Jakarta EE using widely adopted architectural best practices like Domain-Driven 
-Design (DDD). The project is directly based on the well known 
-original [Java DDD sample application](http://dddsample.sourceforge.net) 
-developed by DDD pioneer Eric Evans' company Domain Language and the Swedish 
-software consulting company Citerus. The cargo example actually comes from 
-Eric Evans' seminal book on DDD. The original application is written in Spring,
-Hibernate and Jetty whereas the application is built on Jakarta EE.
+## Este projeto é baseado no original [Eclipse Cargo Tracker - Applied Domain-Driven Design Blueprints for Jakarta EE](https://github.com/eclipse-ee4j/cargotracker)
 
-The application is an end-to-end system for keeping track of shipping cargo. It 
-has several interfaces described in the following sections.
+O projeto demonstra como você pode desenvolver aplicações com *Jakarta EE* utilizando as melhores práticas arquiteturais amplamente adotadas, como Domain-Driven Design (DDD). 
 
-For further details on the project, please visit: https://eclipse-ee4j.github.io/cargotracker/.
+A aplicação é um sistema de fim-a-fim para manter o controle da cargas marítimas. 
+Ele possui várias interfaces descritas nas seções seguintes.
+Para mais detalhes sobre o projeto, por favor, visite: https://eclipse-ee4j.github.io/cargotracker/.
 
-A slide deck introducing the
-fundamentals of the project is available on the official Eclipse 
+A slide deck introducing the fundamentals of the project is available on the official Eclipse 
 Foundation [Jakarta EE SlideShare account](https://www.slideshare.net/Jakarta_EE/applied-domaindriven-design-blueprints-for-jakarta-ee). A recording of the slide deck is available on the official [Jakarta EE YouTube account](https://www.youtube.com/watch?v=pKmmZd-3mhA).
 
 ![Cargo Tracker cover](cargo_tracker_cover.png)
