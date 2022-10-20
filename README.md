@@ -54,72 +54,41 @@ o sistema determinará as **rotas** (routes) que podem funcionar para a carga. U
 uma rota, a carga estará pronta para processar **eventos de manuseio** (handling events) no porto. Você pode
 também mudar o destino da carga, se necessário, ou **rastrear a carga** (track cargo).
 
-A interface de Registro de Eventos de Manuseio é destinada ao pessoal portuário que registra o que 
-aconteceu com a carga. A interface é destinada principalmente a dispositivos móveis, mas
-você pode usá-lo através de um navegador de mesa. A interface está acessível neste URL: http://localhost:8080/cargo-tracker/event-logger/index.xhtml. Por conveniência, você
-poderia usar um emulador móvel em vez de um dispositivo móvel real. Em geral, a carga
-passa por esses eventos:
-
-* É recebido no local de origem.
-* É carregado e descarregado em viagens em seu itinerário.
-* É reclamado no local de destino.
-* Pode passar pela alfândega em pontos arbitrários.
-
-Ao preencher o formulário de registro do evento, é melhor ter o itinerário 
-à mão. Você pode acessar o itinerário para carga registrada através da interface administrativa. O manuseio da carga é feito através de Mensagens para escalabilidade. Ao utilizar o registrador de eventos, observe que somente os eventos de carga e descarga requerem como viagem associada.
-
-Você também deve explorar a interface de registro de eventos em massa baseada no sistema de arquivos. 
-Ela lê os arquivos sob /tmp/uploads. Os arquivos são apenas arquivos CSV. Uma amostra de CSV
-está disponível em [src/test/sample/handling_events.csv](src/test/sample/handling_events.csv). A amostra já está configurada para corresponder aos demais eventos do itinerário da carga ABC123. Certifique-se de atualizar os horários na primeira coluna do arquivo CSV de amostra para coincidir também com o itinerário.
-
-As entradas processadas com sucesso são arquivadas em /tmp/archive. Quaisquer registros com falhas são 
-arquivados sob /tmp/falha.
-
-Não se preocupe em cometer erros. A aplicação pretende ser justa 
-tolerante a erros. Se você se deparar com problemas, você deve [relatá-los](https://github.com/eclipse-ee4j/cargotracker/issues).
-
-Você pode simplesmente remover ./cargo-tracker-data do sistema de arquivos para reiniciar novamente. Este diretório normalmente estará abaixo de $$$ sua instalação paga/glassfish/domínios/domínios1/config.
-
-Você também pode usar os scripts da soapUI incluídos no código fonte para explorar o 
-interfaces REST, bem como os numerosos testes unitários que cobrem a base de código 
-em geral. Alguns dos testes utilizam Arquillian.
-
-Traduzido com a versão gratuita do tradutor - www.DeepL.com/Translator
 
 
+A **interface de Registro de Eventos de Manuseio** (Handling Event Logging interface) é destinada ao pessoal portuário que registra o que 
+aconteceu com a carga. A interface é destinada, principalmente, para dispositivos móveis, mas
+você pode usá-lo através de um navegador no computador. A interface está acessível nesta URL: http://localhost:8080/cargo-tracker/event-logger/index.xhtml. 
+Caso queira, você pode usar um emulador de celular em vez de um dispositivo móvel real. 
+Em geral, a carga passa por esses **eventos**:
 
+* É **recebido** no local de origem.
+* É **carregado** (loaded) e **descarregado** (unloaded) em **viagens** (Voyages) em seu itinerário.
+* É **reinvidicado** (claimed) no local de destino.
+* Pode passar pela **alfândega** (customs) em pontos arbitrários.
 
---
+Ao preencher o formulário de registro do evento, é melhor ter o itinerário à mão. 
+Você pode acessar o itinerário para carga registrada através da interface administrativa. 
+O manuseio da carga é feito através de Messaging para assegurar escalabilidade. 
+Ao utilizar o **registrador de eventos** (event logger), observe que somente os eventos de carga e descarga requerem a viagem (voyage) associada.
 
-The Handling Event Logging interface is intended for port personnel registering what 
-happened to cargo. The interface is primarily intended for mobile devices, but
-you can use it via a desktop browser. The interface is accessible at this URL: http://localhost:8080/cargo-tracker/event-logger/index.xhtml. For convenience, you
-could use a mobile emulator instead of an actual mobile device. Generally speaking cargo
-goes through these events:
+Você também deve explorar a interface de registro de **eventos em massa baseada** (based bulk event) no sistema de arquivos. 
+Ela lê os arquivos sob `/tmp/uploads`. Os arquivos são apenas arquivos CSV. 
+Um modelo do CSV está disponível em [src/test/sample/handling_events.csv](src/test/sample/handling_events.csv). 
+O modelo está configurado para corresponder aos demais eventos do itinerário da carga ABC123. 
+Certifique-se de atualizar os horários na primeira coluna do arquivo CSV do modelo para coincidir também com o itinerário.
 
-* It's received at the origin location.
-* It's loaded and unloaded onto voyages on it's itinerary.
-* It's claimed at it's destination location.
-* It may go through customs at arbitrary points.
+As entradas processadas com sucesso são arquivadas em `/tmp/archive`. Quaisquer registros com falhas são arquivados sob `/tmp/falha`.
 
-While filling out the event registration form, it's best to have the itinerary 
-handy. You can access the itinerary for registered cargo via the admin interface. The cargo handling is done via Messaging for scalability. While using the event logger, note that only the load and unload events require as associated voyage.
+Não se preocupe em cometer erros. A aplicação pretende ser tolerante a erros. 
+Se você se deparar com problemas, você deve [reporta-los](https://github.com/eclipse-ee4j/cargotracker/issues).
 
-You should also explore the file system based bulk event registration interface. 
-It reads files under /tmp/uploads. The files are just CSV files. A sample CSV
-file is available under [src/test/sample/handling_events.csv](src/test/sample/handling_events.csv). The sample is already set up to match the remaining itinerary events for cargo ABC123. Just make sure to update the times in the first column of the sample CSV file to match the itinerary as well.
+Você pode simplesmente remover `./cargo-tracker-data` do sistema de arquivos para reiniciar novamente. 
+Este diretório normalmente estará abaixo de $your-payara-installation/glassfish/domains/domain1/config.
 
-Sucessfully processed entries are archived under /tmp/archive. Any failed records are 
-archived under /tmp/failed.
+Você também pode usar os scripts da `soapUI` para explorar o interfaces REST, bem como os numerosos testes unitários que cobrem a base de código 
+em geral. Alguns dos testes utilizam [Arquillian](http://arquillian.org/).
 
-Don't worry about making mistakes. The application is intended to be fairly 
-error tolerant. If you do come across issues, you should [report them](https://github.com/eclipse-ee4j/cargotracker/issues).
-
-You can simply remove ./cargo-tracker-data from the file system to restart fresh. This directory will typically be under $your-payara-installation/glassfish/domains/domain1/config.
-
-You can also use the soapUI scripts included in the source code to explore the 
-REST interfaces as well as the numerous unit tests covering the code base 
-generally. Some of the tests use Arquillian.
 
 ## Exploring the Code
 
