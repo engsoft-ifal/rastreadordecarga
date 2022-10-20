@@ -105,30 +105,21 @@ Na maior parte das vezes, tudo bem se você é novo em Jakarta EE. Desde que voc
 É óbvio que o usuário ideal deste projeto é alguém que tenha um conhecimento básico de Java, Jakarta EE e DDD. Embora não seja nosso objetivo ser um tutorial completo para demonstrar a grande quantidade de APIs e recursos em Jakarta EE, utilizamos um conjunto bem representativo. 
 Você descobrirá que vai aprender uma quantidade razoável de coisas, simplesmente investigando o código para ver como essas coisas são implementadas.
 
-## Cloud Demo
-Cargo Tracker is deployed to Kubernetes on the cloud using GitHub Actions workflows. You can find the demo deployment on the Scaleforce cloud (https://cargo-tracker.j.scaleforce.net). This project is very thankful to our sponsors [Jelastic](https://jelastic.com) and [Scaleforce](https://www.scaleforce.net) for hosting the demo! The deployment and all data is refreshed nightly. On the cloud Cargo Tracker uses PostgreSQL as the database. The [GitHub Container Registry](https://ghcr.io/eclipse-ee4j/cargo-tracker) is used to publish Docker images.
+## Demonstração na nuvem
+O Cargo Tracker é implantado em Kubernetes na nuvem usando o workflow do GitHub Actions. Você pode encontrar a implantação de demonstração na nuvem de Scaleforce (https://cargo-tracker.j.scaleforce.net). Somos muito grato aos nossos patrocinadores [Jelastic](https://jelastic.com) e [Scaleforce](https://www.scaleforce.net) por hospedar a aplicação demo! O _deployment_ e todos os dados são atualizados durante a noite. Na nuvem Cargo Tracker usa PostgreSQL como base de dados. O [GitHub Container Registry](https://ghcr.io/eclipse-ee4j/cargo-tracker) é usado para publicar imagens do Docker.
 
-![Cargo Tracker sponsors](sponsors.png)
+![Patrocinadores do Cargo Tracker](sponsors.png)
 
-## Java EE 7
-A Java EE 7, Java SE 8, Payara 4.1 version of Cargo Tracker is available under the ['javaee7' branch](https://github.com/eclipse-ee4j/cargotracker/tree/javaee7).
+## Contribuindo
+Este projeto está em conformidade com o [Google Java Style Guide] (https://google.github.io/styleguide/javaguide.html). Você pode usar a ferramenta [google-java-format](https://github.com/google/google-java-format) para ajudá-lo a cumprir com o Guia do Google para Java. Você pode usar a ferramenta com a maioria das principais IDEs, como Eclipse e IntelliJ.
 
-## Contributing
-This project complies with the [Google Java Style Guide](https://google.github.io/styleguide/javaguide.html). You can use the [google-java-format](https://github.com/google/google-java-format) tool to help you comply with the Google Java Style Guide. You can use the tool with most major IDEs such as Eclipse and IntelliJ.
+Além disso, para todos os arquivos XML, XHTML e HTML, usamos uma largura de coluna/linha de 100 e usamos 4 espaços para indentação. Por favor, ajuste as configurações de formatação de sua IDE de acordo.
 
-In addition, for all XML, XHTML and HTML files we use a column/line width of 100 and we use 4 spaces for indentation. Please adjust the formatting settings of your IDE accordingly.
+Para maiores orientações sobre como contribuir, incluindo o roteiro do projeto, por favor, veja [aqui](CONTRIBUTING.md).
 
-For further guidance on contributing including the project roadmap, please look [here](CONTRIBUTING.md).
-
-## Known Issues
-* When you load the project in the Eclipse IDE, you may get some spurious validation failure messages on the XML deployment descriptors (these are essentially bugs in Eclipse). These are harmless and the application is just fine. You can simply ignore these false validation messages or delete them by going to the Markers tab.
-* You may get a log message stating that Payara SSL certificates have expired. This won't get in the way of functionality, but it will
-  stop log messages from being printed to the IDE console. You can solve this issue by manually removing the expired certificates from the Payara domain, as 
-  explained [here](https://github.com/payara/Payara/issues/3038).
-* If you restart the application a few times, you will run into a bug causing a spurious deployment failure. While the problem can be annoying, it's harmless.
-  Just re-run the application (make sure to completely un-deploy the application and shut down Payara first).
-* Sometimes when the server is not shut down correctly or there is a locking/permissions issue, the H2 database that 
-  the application uses get's corrupted, resulting in strange database errors. If 
-  this occurs, you will need to stop the application and clean the database. You 
-  can do this by simply removing the cargo-tracker-data directory from the file 
-  system and restarting the application. This directory will typically be under $your-payara-installation/glassfish/domains/domain1/config.
+## Questões (Problemas) Conhecidas
+* Ao carregar o projeto na IDE Eclipse, você pode receber algumas mensagens falsas de falha de validação nos descritores de implementação XML (estes são essencialmente erros no Eclipse). Você pode simplesmente ignorar estas falsas mensagens de validação ou excluí-las, indo para a aba Markers.
+* Você pode receber uma mensagem de registro declarando que os certificados SSL da Payara expiraram. Isto não vai atrapalhar a funcionalidade, mas
+  parar de imprimir mensagens de registro para o console IDE. Você pode resolver este problema removendo manualmente os certificados expirados do domínio Payara, uma vez que explicado [aqui](https://github.com/payara/Payara/issues/3038).
+* Se você reiniciar a aplicação algumas vezes, você se deparará com um bug causando uma falha espúria na implantação. Embora o problema possa ser incômodo, ele é inofensivo. Basta executar novamente a aplicação.
+* Às vezes quando o servidor não é desligado corretamente ou há um problema de bloqueio/permissões, o banco de dados H2 da aplicação são corrompidos, resultando em estranhos erros de banco de dados. Se isso ocorrer, você precisará parar a aplicação e limpar o banco de dados. Você pode fazer isso simplesmente removendo o diretório de dados do rastreador de carga do arquivo e reiniciar a aplicação. Este diretório normalmente estará abaixo de $$your-payara-installation/glassfish/domains/domain1/config.
