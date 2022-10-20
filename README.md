@@ -1,6 +1,6 @@
 # Rastreador de Carga
 
-##### Este projeto é baseado no original [Eclipse Cargo Tracker - Applied Domain-Driven Design Blueprints for Jakarta EE](https://github.com/eclipse-ee4j/cargotracker)
+###### Este projeto é baseado no original [Eclipse Cargo Tracker - Applied Domain-Driven Design Blueprints for Jakarta EE](https://github.com/eclipse-ee4j/cargotracker)
 
 O projeto demonstra como você pode desenvolver aplicações com *Jakarta EE* utilizando as melhores práticas arquiteturais amplamente adotadas, como Domain-Driven Design (DDD). 
 
@@ -55,7 +55,6 @@ uma rota, a carga estará pronta para processar **eventos de manuseio** (handlin
 também mudar o destino da carga, se necessário, ou **rastrear a carga** (track cargo).
 
 
-
 A **interface de Registro de Eventos de Manuseio** (Handling Event Logging interface) é destinada ao pessoal portuário que registra o que 
 aconteceu com a carga. A interface é destinada, principalmente, para dispositivos móveis, mas
 você pode usá-lo através de um navegador no computador. A interface está acessível nesta URL: http://localhost:8080/cargo-tracker/event-logger/index.xhtml. 
@@ -90,26 +89,21 @@ Você também pode usar os scripts da `soapUI` para explorar o interfaces REST, 
 em geral. Alguns dos testes utilizam [Arquillian](http://arquillian.org/).
 
 
-## Exploring the Code
+## Explorando o Código
 
-As mentioned earlier, the real point of the application is demonstrating how to 
-create well architected, effective Jakarta EE applications. To that end, once you 
-have gotten some familiarity with the application functionality the next thing 
-to do is to dig right into the code.
+Como mencionado anteriormente, o verdadeiro objetivo da aplicação é demonstrar como 
+criar aplicações de Jakarta EE bem arquitetadas e eficazes. Para tal fim, uma vez que você 
+conhecer um pouco das funcionalidades da aplicação o que segue 
+é mergulhar diretamente no código.
 
-DDD is a key aspect of the architecture, so it's important to get at least a 
-working understanding of DDD. As the name implies, Domain-Driven Design is an 
-approach to software design and development that focuses on the core domain and 
-domain logic.
+O DDD é um aspecto chave da arquitetura, por isso é importante obter pelo menos um 
+entendimento de funcionamento do DDD. Como o nome implica, o Design Dirigido por Domínio é um 
+abordagem para o projeto (design) e desenvolvimento de software que se concentra no domínio central e 
+lógica de domínio.
 
-For the most part, it's fine if you are new to Jakarta EE. As long as you have a
-basic understanding of server-side applications, the code should be good enough to get started. For learning Jakarta EE further,
-we have recommended a few links in the resources section of the project site. Of 
-course, the ideal user of the project is someone who has a basic working 
-understanding both Jakarta EE and DDD. Though it's not our goal to become a kitchen 
-sink example for demonstrating the vast amount of APIs and features in Jakarta EE,
-we do use a very representative set. You'll find that you'll learn a fair amount
-by simply digging into the code to see how things are implemented.
+Na maior parte das vezes, tudo bem se você é novo em Jakarta EE. Desde que você tenha um compreensão básica das aplicações do lado do servidor, o código deve ser o suficiente para começar. Para aprender mais sobre Jakarta EE, recomendamos alguns links na seção de recursos do site do projeto. 
+É óbvio que o usuário ideal deste projeto é alguém que tenha um conhecimento básico de Java, Jakarta EE e DDD. Embora não seja nosso objetivo ser um tutorial completo para demonstrar a grande quantidade de APIs e recursos em Jakarta EE, utilizamos um conjunto bem representativo. 
+Você descobrirá que vai aprender uma quantidade razoável de coisas, simplesmente investigando o código para ver como essas coisas são implementadas.
 
 ## Cloud Demo
 Cargo Tracker is deployed to Kubernetes on the cloud using GitHub Actions workflows. You can find the demo deployment on the Scaleforce cloud (https://cargo-tracker.j.scaleforce.net). This project is very thankful to our sponsors [Jelastic](https://jelastic.com) and [Scaleforce](https://www.scaleforce.net) for hosting the demo! The deployment and all data is refreshed nightly. On the cloud Cargo Tracker uses PostgreSQL as the database. The [GitHub Container Registry](https://ghcr.io/eclipse-ee4j/cargo-tracker) is used to publish Docker images.
