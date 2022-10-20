@@ -1,6 +1,6 @@
 # Rastreador de Carga
 
-## Este projeto é baseado no original [Eclipse Cargo Tracker - Applied Domain-Driven Design Blueprints for Jakarta EE](https://github.com/eclipse-ee4j/cargotracker)
+##### Este projeto é baseado no original [Eclipse Cargo Tracker - Applied Domain-Driven Design Blueprints for Jakarta EE](https://github.com/eclipse-ee4j/cargotracker)
 
 O projeto demonstra como você pode desenvolver aplicações com *Jakarta EE* utilizando as melhores práticas arquiteturais amplamente adotadas, como Domain-Driven Design (DDD). 
 
@@ -13,25 +13,25 @@ Foundation [Jakarta EE SlideShare account](https://www.slideshare.net/Jakarta_EE
 
 ![Cargo Tracker cover](cargo_tracker_cover.png)
  
-## Getting Started
+ ## Começando
 
-The [project website](https://eclipse-ee4j.github.io/cargotracker/) has detailed information on how to get started.
+O [site do projeto](https://eclipse-ee4j.github.io/cargotracker/) tem informações detalhadas sobre como começar.
 
-The simplest steps are the following (no IDE required):
+Os passos mais simples são os seguintes (sem necessidade de IDE):
 
-* Get the project source code.
-* Ensure you are running Java SE 8, Java SE 11 or Java SE 17.
-* Make sure JAVA_HOME is set.
-* As long as you have Maven set up properly, navigate to the project source root and 
-  type: `mvn clean package cargo:run`
-* Go to http://localhost:8080/cargo-tracker
+* Obter o código fonte do projeto.
+* Certifique-se de estar executando Java SE 8, Java SE 11 ou Java SE 17.
+* Certifique-se de que o JAVA_HOME está configurado.
+* Desde que você tenha a Maven configurada corretamente, navegue até a raiz do código-fonte do projeto e 
+  tipo: `mvn clean package cargo:run`
+* Vá para http://localhost:8080/cargo-tracker
 
-To set up in Eclipse, follow these steps:
+Para executar o projeto no Eclipse, siga estes passos:
 
-* Set up Java SE 8, Java SE 11 or Java SE 17, [Eclipse for Enterprise Java Developers](https://www.eclipse.org/downloads/packages/) and [Payara 5](https://www.payara.fish/downloads/). You will also need to set up [Payara Tools](https://marketplace.eclipse.org/content/payara-tools) in Eclipse.
-* Import this code in Eclipse as a Maven project, 
-  Eclipse will do the rest for you. Proceed with clean/building the application.
-* After the project is built (which will take a while the very first time as Maven downloads dependencies), simply run it via Payara 5.
+* Configurar Java SE 8, Java SE 11 ou Java SE 17, [Eclipse for Enterprise Java Developers](https://www.eclipse.org/downloads/packages/) e [Payara 5](https://www.payara.fish/downloads/). Você também precisará configurar [Payara Tools](https://marketplace.eclipse.org/content/payara-tools) no Eclipse.
+* Importar este código no Eclipse como um projeto Maven, 
+  Eclipse fará o resto por você. Proceda com o clean/building da aplicação.
+* Depois que o projeto for construído (o que levará algum tempo, pois a Maven baixa pela primeira vez todas as dependências), simplesmente execute-o através do Payara 5.
 
 ## Exploring the Application
 
