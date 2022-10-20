@@ -33,27 +33,63 @@ Para executar o projeto no Eclipse, siga estes passos:
   Eclipse fará o resto por você. Proceda com o clean/building da aplicação.
 * Depois que o projeto for construído (o que levará algum tempo, pois a Maven baixa pela primeira vez todas as dependências), simplesmente execute-o através do Payara 5.
 
-## Exploring the Application
+## Explorando a aplicação
 
-After the application runs, it will be available at: 
-http://localhost:8080/cargo-tracker/. Under the hood, the application uses a 
-number of Jakarta EE features including Faces, CDI, Enterprise Beans, Persistence, REST, Batch, JSON Binding, Bean Validation and Messaging.
+Após a execução do aplicativo, ele estará disponível em: 
+http://localhost:8080/cargo-tracker/. Por baixo dos panos, a aplicação utiliza um 
+número de funcionalidades do Jakarta EE, incluindo: Faces, CDI, Enterprise Beans, Persistence, REST, Batch, JSON Binding, Bean Validation and Messaging.
 
-There are several web interfaces, REST interfaces and a file system scanning
-interface. It's probably best to start exploring the interfaces in the rough
-order below.
+Há várias interfaces web, REST e até uma interface para escanear o sistema de arquivos. 
+Provavelmente, é melhor começar a explorar as interfaces seguindo a ordem abaixo.
 
-The tracking interface let's you track the status of cargo and is
-intended for the general public. Try entering a tracking ID like ABC123 (the 
-application is pre-populated with some sample data).
+A **interface de rastreamento** permite que você acompanhe o status da **carga** (cargo) e é
+destinado ao público em geral. Tente inserir uma identificação de **rastreamento** (tracking) como ABC123 (a 
+aplicação é pré-carregada com alguns dados de amostra (ou sample data) ).
 
-The administrative interface is intended for the shipping company that manages
-cargo. The landing page of the interface is a dashboard providing an overall 
-view of registered cargo. You can book cargo using the booking interface.
-One cargo is booked, you can route it. When you initiate a routing request,
-the system will determine routes that might work for the cargo. Once you select
-a route, the cargo will be ready to process handling events at the port. You can
-also change the destination for cargo if needed or track cargo.
+A **interface administrativa** é destinada à **empresa de navegação**(shipping company) que administra
+carga. A landing page, desta interface, é um _dashboard_ que fornece uma 
+visão da carga registrada. Você pode reservar a carga usando a **interface de reserva**.
+Uma vez que a carga é **reservada** (booked), você pode **encaminhar** (route) a carga. Quando você inicia um **pedido de roteamento** (routing request),
+o sistema determinará as **rotas** (routes) que podem funcionar para a carga. Uma vez que você selecione
+uma rota, a carga estará pronta para processar **eventos de manuseio** (handling events) no porto. Você pode
+também mudar o destino da carga, se necessário, ou **rastrear a carga** (track cargo).
+
+A interface de Registro de Eventos de Manuseio é destinada ao pessoal portuário que registra o que 
+aconteceu com a carga. A interface é destinada principalmente a dispositivos móveis, mas
+você pode usá-lo através de um navegador de mesa. A interface está acessível neste URL: http://localhost:8080/cargo-tracker/event-logger/index.xhtml. Por conveniência, você
+poderia usar um emulador móvel em vez de um dispositivo móvel real. Em geral, a carga
+passa por esses eventos:
+
+* É recebido no local de origem.
+* É carregado e descarregado em viagens em seu itinerário.
+* É reclamado no local de destino.
+* Pode passar pela alfândega em pontos arbitrários.
+
+Ao preencher o formulário de registro do evento, é melhor ter o itinerário 
+à mão. Você pode acessar o itinerário para carga registrada através da interface administrativa. O manuseio da carga é feito através de Mensagens para escalabilidade. Ao utilizar o registrador de eventos, observe que somente os eventos de carga e descarga requerem como viagem associada.
+
+Você também deve explorar a interface de registro de eventos em massa baseada no sistema de arquivos. 
+Ela lê os arquivos sob /tmp/uploads. Os arquivos são apenas arquivos CSV. Uma amostra de CSV
+está disponível em [src/test/sample/handling_events.csv](src/test/sample/handling_events.csv). A amostra já está configurada para corresponder aos demais eventos do itinerário da carga ABC123. Certifique-se de atualizar os horários na primeira coluna do arquivo CSV de amostra para coincidir também com o itinerário.
+
+As entradas processadas com sucesso são arquivadas em /tmp/archive. Quaisquer registros com falhas são 
+arquivados sob /tmp/falha.
+
+Não se preocupe em cometer erros. A aplicação pretende ser justa 
+tolerante a erros. Se você se deparar com problemas, você deve [relatá-los](https://github.com/eclipse-ee4j/cargotracker/issues).
+
+Você pode simplesmente remover ./cargo-tracker-data do sistema de arquivos para reiniciar novamente. Este diretório normalmente estará abaixo de $$$ sua instalação paga/glassfish/domínios/domínios1/config.
+
+Você também pode usar os scripts da soapUI incluídos no código fonte para explorar o 
+interfaces REST, bem como os numerosos testes unitários que cobrem a base de código 
+em geral. Alguns dos testes utilizam Arquillian.
+
+Traduzido com a versão gratuita do tradutor - www.DeepL.com/Translator
+
+
+
+
+--
 
 The Handling Event Logging interface is intended for port personnel registering what 
 happened to cargo. The interface is primarily intended for mobile devices, but
