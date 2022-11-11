@@ -8,8 +8,6 @@ A aplicação é um sistema de fim-a-fim para manter o controle da cargas marít
 Ele possui várias interfaces descritas nas seções seguintes.
 Para mais detalhes sobre o projeto, por favor, visite: https://eclipse-ee4j.github.io/cargotracker/.
 
-A slide deck introducing the fundamentals of the project is available on the official Eclipse 
-Foundation [Jakarta EE SlideShare account](https://www.slideshare.net/Jakarta_EE/applied-domaindriven-design-blueprints-for-jakarta-ee). A recording of the slide deck is available on the official [Jakarta EE YouTube account](https://www.youtube.com/watch?v=pKmmZd-3mhA).
 
 ![Cargo Tracker cover](cargo_tracker_cover.png)
  
